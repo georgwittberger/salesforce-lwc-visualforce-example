@@ -1,0 +1,33 @@
+<apex:page docType="html-5.0" applyHtmlTag="false" applyBodyTag="false" standardStylesheets="false" showHeader="false" sidebar="false">
+  <html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Example Page</title>
+    <!-- Enable Lightning Out -->
+    <apex:includeLightning />
+  </head>
+
+  <body>
+    <!-- Define wrapper element to host the component -->
+    <div id="lwcvf-example-component"></div>
+    <script>
+      // Load Lightning Out app declaring the component
+      $Lightning.use('c:lwcvf_ExampleApp', () => {
+        $Lightning.createComponent(
+          // Name of the component including namespace prefix (or "c:" for own org)
+          'c:lwcvf_ExampleComponent',
+          // Public properties passed to the component
+          { title: 'Example Title', items: ['Item 1', 'Item 2', 'Item 3'] },
+          // ID of the wrapper element to insert the component into
+          'lwcvf-example-component',
+          // Callback function invoked when the component has been rendered
+          (component) => { }
+        );
+      });
+    </script>
+  </body>
+
+  </html>
+</apex:page>
